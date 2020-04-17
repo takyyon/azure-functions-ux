@@ -111,7 +111,7 @@ class MonacoEditor extends React.Component<any, any> {
   }
 
   public updateDimensions() {
-    if (this.editor) {
+    if (typeof this.editor !== 'undefined') {
       this.editor.layout();
     }
   }

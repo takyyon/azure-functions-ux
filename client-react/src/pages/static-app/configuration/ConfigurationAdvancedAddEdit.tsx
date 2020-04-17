@@ -15,7 +15,7 @@ interface ConfigurationAdvancedAddEditProps {
 const ConfigurationAdvancedAddEdit: React.FC<ConfigurationAdvancedAddEditProps> = props => {
   const { environmentVariables, updateEnvironmentVariable, cancel } = props;
 
-  const [environmentVariablesJSON, setEnvironmentVariablesJSON] = useState('');
+  const [environmentVariablesJSON, setEnvironmentVariablesJSON] = useState('[]');
   const [errorMessage, setErrorMessage] = useState('');
 
   const { t } = useTranslation();
