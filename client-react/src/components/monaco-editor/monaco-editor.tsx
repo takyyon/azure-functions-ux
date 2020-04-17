@@ -82,16 +82,18 @@ class MonacoEditor extends React.Component<any, any> {
     if (this.containerElement) {
       // Before initializing monaco editor
       this.editorWillMount();
-      this.editor = monaco.editor.create(this.containerElement, {
-        value,
-        language,
-        ...options,
-      });
-      if (theme) {
-        monaco.editor.setTheme(theme);
+      if (monaco && monaco.editor) {
+        this.editor = monaco.editor.create(this.containerElement, {
+          value,
+          language,
+          ...options,
+        });
+        if (theme) {
+          monaco.editor.setTheme(theme);
+        }
+        // After initializing monaco editor
+        this.editorDidMount(this.editor);
       }
-      // After initializing monaco editor
-      this.editorDidMount(this.editor);
     }
   }
 
