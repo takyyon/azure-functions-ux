@@ -69,8 +69,11 @@ const ConfigurationAdvancedAddEdit: React.FC<ConfigurationAdvancedAddEditProps> 
           options={{
             minimap: { enabled: false },
             scrollBeyondLastLine: false,
+            renderWhitespace: 'all',
+            readOnly: false,
           }}
           height="calc(100vh - 140px)"
+          disabled={false}
         />
         <ActionBar
           id="environment-variable-edit-footer"
