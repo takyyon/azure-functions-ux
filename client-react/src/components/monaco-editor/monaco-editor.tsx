@@ -42,11 +42,13 @@ class MonacoEditor extends React.Component<any, any> {
       monaco.editor.setTheme(this.props.theme);
     }
 
-    if (this.editor.updateOptions) {
-      this.editor.updateOptions({ ...this.props.options });
-    }
+    if (this.editor) {
+      if (this.editor.updateOptions) {
+        this.editor.updateOptions({ ...this.props.options });
+      }
 
-    this.editor.layout();
+      this.editor.layout();
+    }
   }
 
   public componentWillUnmount() {
@@ -109,7 +111,9 @@ class MonacoEditor extends React.Component<any, any> {
   }
 
   public updateDimensions() {
-    this.editor.layout();
+    if (this.editor) {
+      this.editor.layout();
+    }
   }
 }
 
